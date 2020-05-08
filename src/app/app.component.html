@@ -1,0 +1,9 @@
+<div style="border: 1px solid gray;">
+  <input type="checkbox" (change)="countryChange($event)" [checked]="checker"/>Countries
+  <br>
+  <!-- country list start -->
+  <div *ngFor="let name of checkboxData;let i = index" style="display:inline-block">
+    <input type="checkbox" [name]="name" [disabled]="enabledCountries" (change)="onChange($event,i)" [checked]="isChecked && (isCheckedName==name)"> {{name |titlecase }}
+  </div>
+   <!-- country list end-->
+</div>
